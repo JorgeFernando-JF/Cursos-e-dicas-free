@@ -11,29 +11,78 @@ nav{
     background-color: rgba(51,51,51,0.98);
     text-align: center;
     position: fixed;
+
+}
+nav#desk{
+    display: fixed;
+    
 }
 nav ul{
     list-style: none;
-    line-height:45px;
+    line-height: 45px;
+        
 }
 nav ul li{
     display: inline;
     padding: 0px 1.3%;
 }
 nav ul li a{
-    color: rgb(214,214,214);
+    color:rgb(214, 214, 214);
     font-size: 0.81em;
     text-decoration: none;
 
-    transition-timing-function: ease-in-out;
-    transition-duration: 0.3s;
+    transition-timing-function:ease-in-out;
+    transition-duration: 0.5s;
 }
 nav ul li a:hover{
-    color: rgb(245,245,245);
+    color:rgb(255, 255, 255);
 }
+
+nav#mobile{
+    display: none;
+    
+}
+
 ul#mob{
     display: none;
 }
+#mobmenu{
+    display: none;
+}
+#btnmob{
+    border: none;
+    background: none;
+}
+#btnmob:hover{
+    cursor: pointer;
+}
+
+label{
+    cursor: pointer;
+    position: relative;
+    display: block;
+    height: 22px;
+    width: 20px;
+    margin-left: 15px;
+  }
+  
+  label span{
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 100%;
+    border-radius: 30px;
+    background: #eeebeb;
+    transition: 0.25s ease-in-out;
+  }
+  
+  label span:nth-child(1){
+    top: 6px;
+  }
+  
+  label span:nth-child(2){
+    top: 16px;
+  }
 
 @media only screen and (min-width: 300px) and (max-width:800px){
     ul#desk{
@@ -44,11 +93,52 @@ ul#mob{
     }
     li#hamburguer{
         float: left;
-        margin-left: 13px;
+        
+        margin-top: 5px;
     }
     li#sacola{
         float: right;
-        margin-right: 13px;
+        margin-right: 15px;
         margin-top: 2px;
     }
+    
+    #mobmenu{
+        line-height:none;
+        display: block;
+        position: absolute;
+        width: 100%;
+        margin-top: -1px;
+        margin-right: 0px;
+        background-color: rgba(51,51,51,0.98);
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;
+        transition: .8s;
+        z-index: 100;
+    }
+
+    #mobmenu a{
+        padding: 0px;
+        margin: -20px 10%;
+        display: block;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        text-align: left;
+    }
+
+    #nav.active #mobmenu{
+        display:block;
+        height: 800px;
+        visibility:visible;
+        overflow-y: auto;
+    }
+    #nav.active #a{
+        transform: rotate(45deg);
+        top: 10px;
+      }
+      
+    #nav.active #b{
+        transform: rotate(-45deg);
+        top:10px;
+      }
+
 }
